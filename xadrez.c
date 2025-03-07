@@ -35,6 +35,20 @@ int main() {
 
     printf("\n"); // Pula Uma Linha
 
+// Implementando o Movimento do Cavalo com Loop Aninhado
+
+    int movimentoCompleto = 1; // Flag para cotrolar o movimento em 'L'
+
+    while (movimentoCompleto--) {
+
+        for (int i = 0; i < 2; i++) {
+            printf("Cavalo - Baixo\n"); // Imprime "Baixo" duas vezes
+        }
+        printf("Cavalo - Esquerda\n"); // Imprime "Esquerda" uma vez
+    }
+
+    printf("\n"); // Pula Uma Linha
+
     return 0;
 
 }
