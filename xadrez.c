@@ -1,54 +1,72 @@
-// Tema 3 - Movimentação de Peças de Xadrez
+// Tema 3 - Movimentação de Peças de Xadrez com Recursividade e Loops Complexos
 
 #include <stdio.h>
 
+// Função recursiva para mover a Torre para a Direita
+
+    void moverTorre(int casas) {
+    if (casas > 0) {
+    printf("Torre - Direita\n");
+    moverTorre(casas - 1);
+    }
+}
+
+// Função recursiva para mover a Rainha para a Esquerda
+
+    void moverRainha(int casas) {
+    if (casas > 0) {
+    printf("Rainha - Esquerda\n");
+    moverRainha(casas - 1);
+    }
+}
+
+// Função para mover o Bispo usando loops aninhados
+
+    void moverBispo(int casas) {
+    // Loop externo para o movimento vertical
+    for (int i = 0; i < casas; i++) { 
+        printf ("Bispo - cima\n");
+
+        // Loop interno para o movimento horizontal
+        for (int j = 0; j < 1; j++) { 
+            printf("Bispo - Direita\n");
+        }
+    }
+}
+
 int main() {
 
-// Move a Torre 5 Casa Para Direita (usando o for)
+// Movimenta a Torre
 
-    for (int i =0; i < 5; i++) {
+    moverTorre(5);
+    printf("\n");
 
-        printf("Torre - Direita\n"); //Imprime a Direção Da Peça
-    }
+// Movimenta a Rainha
 
-    printf("\n"); // Pula Uma Linha
+    moverRainha(8);
+    printf("\n");
 
-// Move o Bispo 5 Casas na Diagonal para Cima e Direita (usando while)
+// Movimenta o Bispo 
 
-    int j = 0;
-    while (j < 5) {
+    moverBispo(5);
+    printf("\n");
 
-        printf("Bispo - Cima, Direita\n"); // Imprime o movimento diagonal do Bispo
-        j++;
-    }
+// Loop externo para controlar o movimento do cavalo
 
-    printf("\n"); // Pula Uma Linha
-
-// Move a Rainha 8 Casas Para a Esquerda (usando do-while)
-
-    int k = 0;
-    do {
-
-        printf("Rainha - Esquerda\n"); // Imprime a direção da peça
-        k++;
-    } while (k < 8);
-
-    printf("\n"); // Pula Uma Linha
-
-// Implementando o Movimento do Cavalo com Loop Aninhado
-
-    int movimentoCompleto = 1; // Flag para cotrolar o movimento em 'L'
-
-    while (movimentoCompleto--) {
-
-        for (int i = 0; i < 2; i++) {
-            printf("Cavalo - Baixo\n"); // Imprime "Baixo" duas vezes
+    for (int i = 0, j = 0; i < 2 && j < 1; i++, j++) {
+        
+        // Loop para o movimento "Cima"
+        for (int k = 0; k < 2; k++) {
+            printf("Cavalo - Cima\n");  
         }
-        printf("Cavalo - Esquerda\n"); // Imprime "Esquerda" uma vez
+
+            // Loop para o movimento "Direita"
+            for (int l = 0; l < 1; l++) {
+                printf("Cavalo - Direita\n");  
+            }
     }
 
     printf("\n"); // Pula Uma Linha
 
     return 0;
-
 }
